@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { pluck } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,9 @@ export class CocktailService {
       params: {
         s: query,
       }
-    });
+    }).pipe(
+    pluck('drinks')
+    );
   }
 
 }

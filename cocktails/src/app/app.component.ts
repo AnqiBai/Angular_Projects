@@ -16,7 +16,7 @@ export class AppComponent {
     this.query = query;
 
     this.cocktail.search(query).subscribe((response: any) => {
-      this.drinks = response.drinks;
+      this.drinks = response;
     });
   }
 }

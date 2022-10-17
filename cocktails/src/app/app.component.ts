@@ -9,10 +9,11 @@ import { CocktailService } from './cocktail.service';
 export class AppComponent {
   constructor(private cocktail: CocktailService) { }
 
+  drinks = [];
   search(query: string) {
     // console.log('app: ', query);
-    this.cocktail.search(query).subscribe(response => {
-      console.log(response);
+    this.cocktail.search(query).subscribe((response: any) => {
+      this.drinks = response.drinks;
     });
   }
 }

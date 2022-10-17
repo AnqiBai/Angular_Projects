@@ -12,7 +12,6 @@ export class CocktailService {
     return this.http.get('https://www.thecocktaildb.com/api/json/v1/1/search.php', {
       params: {
         s: query,
-        //s: 'margarita'
       }
     });
   }

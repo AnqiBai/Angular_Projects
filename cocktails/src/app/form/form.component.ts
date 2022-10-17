@@ -8,6 +8,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class FormComponent implements OnInit {
   @Output() submitted = new EventEmitter();
   query = '';
+
   constructor() { }
 
   ngOnInit(): void {
@@ -15,8 +16,9 @@ export class FormComponent implements OnInit {
 
   onSubmit(event: Event) {
     // stop the event from refreshing the page.
-    event.stopPropagation();
+    event.preventDefault();
     this.submitted.emit(this.query);
+    //console.log('form:', this.query);
   }
 
 }

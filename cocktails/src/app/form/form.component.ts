@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-form',
@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-
+  @Output() submitted = new EventEmitter();
+  query = '';
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(event: Event) {
+    // stop the event from refreshing the page.
+    event.stopPropagation();
+    this.submitted.emit(this.query);
   }
 
 }

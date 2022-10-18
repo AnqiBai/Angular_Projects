@@ -1,10 +1,10 @@
 <div class="container">
   <div class="card mt-3">
-    <form class="card-body">
+    <form class="card-body" [formGroup]="ccForm">
       <div class="row">
         <div class="col-md-6 mb-3">
           <label>Name on card</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" formControlName="name">
         </div>
         <div class="col-md-6 mb-3">
           <label>Credit card number</label>
@@ -26,3 +26,5 @@
     </form>
   </div>
 </div>
+<div>Values: {{ ccForm.value | json }}</div>
+<div>Valid: {{ ccForm.valid }}</div>

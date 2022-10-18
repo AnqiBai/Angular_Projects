@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,9 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AppComponent {
   ccForm = new FormGroup({
-  name: new FormControl('')
-  });
+    name: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3)
+    ])
+  })
 }

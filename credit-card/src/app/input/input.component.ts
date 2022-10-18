@@ -8,7 +8,7 @@ import { FormControl } from '@angular/forms';
 })
 export class InputComponent implements OnInit {
   @Input() control!: FormControl;
-
+ @Input('m') mask: string | boolean = false;
   constructor() { }
 
   ngOnInit(): void {

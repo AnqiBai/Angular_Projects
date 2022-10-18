@@ -1,4 +1,4 @@
-<input type="text" class="form-control" [formControl]="control"
+<input type="text" [mask]="$any(mask)" [dropSpecialCharacters]="false" class="form-control" [formControl]="control"
     [ngClass]="{ 'is-invalid': showMsg() }">
 <ng-container *ngIf="showMsg()">
     <div *ngIf="$any(control.errors).required" class="invalid-feedback">

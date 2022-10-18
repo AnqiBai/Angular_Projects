@@ -5,8 +5,8 @@
         <div class="col-md-6 mb-3">
           <label>Name on card</label>
           <input type="text" class="form-control" formControlName="name"
-            [ngClass]="{ 'is-invalid': $any(ccForm.get('name')).errors }">
-          <ng-container *ngIf="$any(ccForm.get('name')).errors">
+            [ngClass]="{ 'is-invalid': $any(ccForm.get('name')).dirty && $any(ccForm.get('name')).touched && $any(ccForm.get('name')).errors }">
+          <ng-container *ngIf="$any(ccForm.get('name')).dirty && $any(ccForm.get('name')).touched && $any(ccForm.get('name')).errors">
   <div *ngIf="$any(ccForm.get('name')).errors.required" class="invalid-feedback">
     Please fill in the field.
   </div>
